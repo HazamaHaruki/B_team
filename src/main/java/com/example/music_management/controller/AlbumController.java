@@ -17,6 +17,8 @@ import com.example.music_management.form.MusicForm;
 import com.example.music_management.viewmodel.AlbumViewModel;
 
 
+//コグレがコミットしました
+
 @Controller
 @RequestMapping("/albums")
 public class AlbumController {
