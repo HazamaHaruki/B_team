@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
-@RequestMapping("/albums")
+@RequestMapping("/libraries")
 public class LibraryController {
     private final LibraryService libraryService;
 
