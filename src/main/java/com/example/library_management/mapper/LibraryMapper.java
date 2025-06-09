@@ -18,7 +18,7 @@ public interface LibraryMapper {
     @Select("SELECT * FROM libraries")
     List<Library> selectAllLibraries();
 
-    @Insert("INSERT INTO libraries (title, artist, release_date) VALUES (#{title}, #{artist}, #{releaseDate})")
+    @Insert("INSERT INTO libraries (book_id, book_name, user_name,user_id,rental_date,return_date,shelf_id) VALUES (#{bookId}, #{bookName}, #{userName},#{userId},#{rentalDate},#{returnDate},#{shelfId})")
     @Options(useGeneratedKeys = true, keyProperty = "libraryId")
     void insertLibrary(Library library);
 
@@ -28,14 +28,14 @@ public interface LibraryMapper {
     @Delete("DELETE FROM libraries WHERE library_id = #{libraryId}")
     void deleteLibraryById(long libraryId);
 
-    @Update("UPDATE libraries SET title = #{title}, artist = #{artist}, release_date = #{releaseDate} WHERE album_id = #{albumId}")
+    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName},user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId}, WHERE library_id = #{libraryId}")
     void updateLibrary(Library library);
     
-    @Select("""
-            SELECT libraries.library_id, libraries.title, artist, release_date, count(musics.music_id) AS music_count FROM albums
+    /*@Select("""
+            SELECT libraries.libraryId, libraries.title, artist, release_date, count(musics.music_id) AS music_count FROM albums
             LEFT OUTER JOIN musics ON libraries.library_id = musics.library_id
             GROUP BY libraries.library_id, libraries.title, artist, release_date
-            """)
+            """)*/
             
     public List<LibraryViewModel> selectAllLibrariesWithMusicCount();
 }

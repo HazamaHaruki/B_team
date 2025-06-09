@@ -12,7 +12,7 @@ import com.example.library_management.form.AlbumForm;
 import com.example.library_management.form.MusicForm;
 import com.example.library_management.service.AlbumService;
 import com.example.library_management.service.MusicService;
-import com.example.library_management.viewmodel.AlbumViewModel;
+import com.example.library_management.viewmodel.LibraryViewModel;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class LibraryController {
     @GetMapping
     public String libraries(Model model) {
         // List<Album> albums = albumService.getALLAlbums();
-        List<AlbumViewModel> libraries = libraryService.getAllLibrariesWithCount();
+        List<LibraryViewModel> libraries = libraryService.getAllLibrariesWithCount();
         model.addAttribute("libraries", libraries);
         return "library/library-list";
     }
