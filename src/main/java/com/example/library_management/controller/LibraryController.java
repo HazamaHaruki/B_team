@@ -78,7 +78,7 @@ public class LibraryController {
     }
 
     @PostMapping("/{bookId}/edit")
-    public String updateLibrary(@PathVariable long bookId, Library library) {
+    public String updateLibrary(@PathVariable String bookId, Library library) {
         libraryService.updateLibrary(bookId, library);
         return "redirect:/libraries";
     }
