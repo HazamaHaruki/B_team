@@ -23,9 +23,14 @@ public class LibraryService {
 
     public void createLibrary(LibraryForm libraryForm) {
         Library library = new Library();
-        library.setLibraryId(libraryForm.getLibraryId());
-        library.setArtist(libraryForm.getArtist());
-        library.setReleaseDate(libraryForm.getReleaseDate());
+        library.setBookId(libraryForm.getBookId());
+        library.setBookName(libraryForm.getBookName());
+        library.setUserId(libraryForm.getUserId());
+        library.setShelfId(libraryForm.getShelfId());
+        library.setUserName(libraryForm.getUserName());
+
+        // library.setArtist(libraryForm.getArtist());
+        // library.setReleaseDate(libraryForm.getReleaseDate());
         libraryRepository.insertLibrary(library);
     }
 
@@ -33,12 +38,12 @@ public class LibraryService {
         return libraryRepository.getLibraryById(libraryId);
     }
 
-    public void deleteLibrary(long libraryId) {
-        libraryRepository.deleteLibrary(libraryId);
+    public void deleteLibrary(long bookId) {
+        libraryRepository.deleteLibrary(bookId);
     }
 
-    public void updateLibrary(long libraryId, Library library) {
-        if (libraryId != library.getLibraryId()) {
+    public void updateLibrary(String bookId, Library library) {
+        if (bookId != library.getBookId()) {
             throw new IllegalArgumentException("Library ID does not match");
         }
         libraryRepository.updateLibrary(library);
