@@ -1,9 +1,11 @@
-CREATE TABLE albums (
-    book_name VARCHAR(255) PRIMARY KEY,
+CREATE TABLE libraries (
+    book_id int PRIMARY,
+    book_name VARCHAR(255) NOT NULL,
     user_name VARCHAR(255) NOT NULL,
     user_id VARCHAR(255),
     rental_date DATE,
     return_id DATE,
+    shelf_id : varchar(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
