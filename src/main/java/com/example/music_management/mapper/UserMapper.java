@@ -1,6 +1,6 @@
-package com.example.music_management.mapper;
+package com.example.library_management.mapper;
 
-import com.example.music_management.entity.User;
+import com.example.library_management.entity.User;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
