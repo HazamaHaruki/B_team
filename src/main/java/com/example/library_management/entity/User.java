@@ -7,6 +7,6 @@ import java.time.LocalDateTime;
 public class User {
     private long userId;
     private String username;
-    private String password;
+    //private String password;
     private LocalDateTime createdAt;
 }

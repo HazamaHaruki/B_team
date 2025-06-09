@@ -12,6 +12,6 @@ public class Music {
     private String title;
     @DateTimeFormat(pattern = "HH:mm:ss")
     private LocalTime duration;
-    private long albumId;
+    private long libraryId;
     private LocalDateTime createdAt;
 }
