@@ -4,7 +4,7 @@ CREATE TABLE libraries (
     user_name VARCHAR(255) NOT NULL,
     user_id VARCHAR(255),
     rental_date DATE,
-    return_id DATE,
+    return_date DATE,
     shelf_id : varchar(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
