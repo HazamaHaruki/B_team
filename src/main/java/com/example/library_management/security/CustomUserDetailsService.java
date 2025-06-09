@@ -1,12 +1,13 @@
-package com.example.music_management.security;
+package com.example.library_management.security;
 
-import com.example.music_management.entity.User;
-import com.example.music_management.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import org.springframework.stereotype.Service;
+
+import com.example.library_management.entity.User;
+import com.example.library_management.repository.UserRepository;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;

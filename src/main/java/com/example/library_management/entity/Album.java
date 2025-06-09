@@ -1,4 +1,4 @@
-package com.example.music_management.entity;
+package com.example.library_management.entity;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;

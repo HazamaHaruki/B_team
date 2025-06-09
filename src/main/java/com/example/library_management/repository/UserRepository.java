@@ -1,8 +1,9 @@
-package com.example.music_management.repository;
+package com.example.library_management.repository;
 
-import com.example.music_management.entity.User;
-import com.example.music_management.mapper.UserMapper;
 import org.springframework.stereotype.Repository;
+
+import com.example.library_management.entity.User;
+import com.example.library_management.mapper.UserMapper;
 
 @Repository
 public class UserRepository {

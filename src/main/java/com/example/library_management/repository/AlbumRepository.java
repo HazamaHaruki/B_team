@@ -1,10 +1,10 @@
-package com.example.music_management.repository;
+package com.example.library_management.repository;
 
-import com.example.music_management.mapper.AlbumMapper;
-import com.example.music_management.entity.Album;
 import org.springframework.stereotype.Repository;
 
-import com.example.music_management.viewmodel.AlbumViewModel;
+import com.example.library_management.entity.Album;
+import com.example.library_management.mapper.AlbumMapper;
+import com.example.library_management.viewmodel.AlbumViewModel;
 
 import java.util.List;
 

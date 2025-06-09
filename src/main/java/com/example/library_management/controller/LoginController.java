@@ -1,4 +1,4 @@
-package com.example.music_management.controller;
+package com.example.library_management.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
