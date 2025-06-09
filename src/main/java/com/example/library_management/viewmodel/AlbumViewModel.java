@@ -1,4 +1,4 @@
-package com.example.music_management.viewmodel;
+package com.example.library_management.viewmodel;
 import lombok.Data;
 import java.time.LocalDate;
 

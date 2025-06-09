@@ -1,11 +1,11 @@
 package com.example.library_management.mapper;
 
-import com.example.library_management.entity.User;
-
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
+
+import com.example.library_management.entity.User;
 
 @Mapper
 public interface UserMapper {

@@ -1,8 +1,10 @@
-package com.example.music_management.security;
+package com.example.library_management.security;
 
-import com.example.music_management.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.example.library_management.entity.User;
+
 import java.util.Collection;
 import java.util.List;
 

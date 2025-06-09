@@ -1,9 +1,10 @@
-package com.example.music_management.service;
+package com.example.library_management.service;
 
-import com.example.music_management.entity.Music;
-import com.example.music_management.form.MusicForm;
-import com.example.music_management.repository.MusicRepository;
 import org.springframework.stereotype.Service;
+
+import com.example.library_management.entity.Music;
+import com.example.library_management.form.MusicForm;
+import com.example.library_management.repository.MusicRepository;
 
 import java.util.List;
 

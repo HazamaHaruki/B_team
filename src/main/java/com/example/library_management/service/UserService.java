@@ -1,10 +1,11 @@
-package com.example.music_management.service;
+package com.example.library_management.service;
 
-import com.example.music_management.entity.User;
-import com.example.music_management.form.UserForm;
-import com.example.music_management.repository.UserRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import com.example.library_management.entity.User;
+import com.example.library_management.form.UserForm;
+import com.example.library_management.repository.UserRepository;
 
 @Service
 public class UserService {

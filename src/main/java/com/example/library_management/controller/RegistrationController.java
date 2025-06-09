@@ -1,11 +1,12 @@
-package com.example.music_management.controller;
+package com.example.library_management.controller;
 
-import com.example.music_management.form.UserForm;
-import com.example.music_management.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.library_management.form.UserForm;
+import com.example.library_management.service.UserService;
 
 @Controller
 public class RegistrationController {
