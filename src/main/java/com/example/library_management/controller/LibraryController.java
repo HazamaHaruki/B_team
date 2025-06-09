@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.library_management.entity.Album;
-import com.example.library_management.entity.Music;
-import com.example.library_management.form.AlbumForm;
-import com.example.library_management.form.MusicForm;
-import com.example.library_management.service.AlbumService;
-import com.example.library_management.service.MusicService;
+import com.example.library_management.entity.Library;
+// import com.example.library_management.entity.Music;
+import com.example.library_management.form.LibraryForm;
+// import com.example.library_management.form.MusicForm;
+import com.example.library_management.service.LibraryService;
+//import com.example.library_management.service.MusicService;
 import com.example.library_management.viewmodel.LibraryViewModel;
 
 import java.util.List;

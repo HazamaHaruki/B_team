@@ -16,8 +16,8 @@ public class LibraryRepository {
         this.libraryMapper = libraryMapper;
     }
 
-    public List<Library> getAllLibrarys() {
-        return libraryMapper.selectAllLibrarys();
+    public List<Library> getAllLibraries() {
+        return libraryMapper.selectAllLibraries();
     }
 
     public void insertLibrary(Library library) {
@@ -36,9 +36,8 @@ public class LibraryRepository {
         libraryMapper.updateLibrary(library);
     }
 
-    public List<LibraryViewModel> getAllLibrarysWithMusicCount() {
-        return libraryMapper.selectAllLibrarysWithMusicCount();
+    public List<LibraryViewModel> getAllLibrariesWithCount() {
+        return libraryMapper.selectAllLibrariesWithCount();
     }
 
 }
-

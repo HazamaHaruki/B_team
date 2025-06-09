@@ -17,13 +17,13 @@ public class LibraryService {
         this.libraryRepository = libraryRepository;
     }
 
-    public List<Library> getALLLibrarys() {
-        return libraryRepository.getAllLibrarys();
+    public List<Library> getAllLibraries() {
+        return libraryRepository.getAllLibraries();
     }
 
     public void createLibrary(LibraryForm libraryForm) {
         Library library = new Library();
-        library.setTitle(libraryForm.getTitle());
+        library.setLibraryId(libraryForm.getLibraryId());
         library.setArtist(libraryForm.getArtist());
         library.setReleaseDate(libraryForm.getReleaseDate());
         libraryRepository.insertLibrary(library);
@@ -44,7 +44,7 @@ public class LibraryService {
         libraryRepository.updateLibrary(library);
     }
 
-    public List<LibraryViewModel> getAllLibrarysWithMusicCount() {
-        return libraryRepository.getAllLibrarysWithMusicCount();
+    public List<LibraryViewModel> getAllLibrariesWithCount() {
+        return libraryRepository.getAllLibrariesWithCount();
     }
 }

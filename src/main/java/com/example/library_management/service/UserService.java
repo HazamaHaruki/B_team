@@ -1,3 +1,4 @@
+/*
 package com.example.library_management.service;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,3 +24,4 @@ public class UserService {
         userRepository.insertUser(user);
     }
 }
+*/

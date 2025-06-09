@@ -37,7 +37,5 @@ public interface LibraryMapper {
             GROUP BY libraries.library_id, libraries.title, artist, release_date
             """)*/
             
-    public List<LibraryViewModel> selectAllLibrariesWithMusicCount();
+    public List<LibraryViewModel> selectAllLibrariesWithCount();
 }
-
-
