@@ -13,7 +13,6 @@ public class Library {
     private String bookName;
     private String userName;
     private String userId;
-    
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate rentalDate;
     private LocalDate returnId;

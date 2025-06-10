@@ -1,12 +1,2 @@
-INSERT INTO libraries (book_id, book_name, user_name, user_id, rental_date, return_date, shelf_id, created_at) VALUES
-('A100', 'コバエ大百科', '佐藤太郎',"B0102",'2021-05-15','2021-05-29');
--- ('料理のすゝめ', '田中次郎',"B020",'2022-02-16','2022-03-16'),
--- ('Java入門', '大橋鴨太郎',"C100",'2022-11-03','2022-12-03');
-
-/*INSERT INTO musics (title, duration, album_id) VALUES
-('Sunset', '00:03:45', 1),
-('Moonlight', '00:04:12', 1),
-('Eternal Memories', '00:05:45', 2);*/
-
---- PW は「track」
-/*INSERT INTO users (username, password) VALUES ('sample', '$2a$08$hBocxV325GV9RKzHR.lHreJr8DsMrkg6vg0kRTbNnBvUFknu670GC');
+INSERT INTO libraries (book_id, book_name, user_name, user_id, shelf_id, rental_date, return_date) VALUES
+('A100', 'コバエ大百科', '佐藤太郎','B0102','K200','2021-05-15','2021-05-29');
