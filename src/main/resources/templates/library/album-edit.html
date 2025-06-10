@@ -5,18 +5,34 @@
     <div th:replace="~{layout :: header}"></div>
     <h3>アルバム編集</h3>
     
-     <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" th:object="${album}" method="post">
+     <form th:action="@{/libraies/{bookId}/edit(bookId=${library.bookId})}" th:object="${library}" method="post">
         <div>
-            <label for="title">タイトル：</label>
-            <input type="text" id="title" name="title" th:field="*{title}">
+            <label for="book_id">図書番号：</label>
+            <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
         </div>
         <div>
-            <label for="artist">アーティスト：</label>
-            <input type="text" id="artist" name="artist" th:field="*{artist}">
+            <label for="book_name">タイトル：</label>
+            <input type="text" id="book_name" name="book_name" th:field="*{bookName}">
         </div>
         <div>
-            <label for="release-date">リリース日：</label>
-            <input type="date" id="release-date" name="release-date" th:field="*{releaseDate}">
+            <label for="user_name">利用者名：</label>
+            <input type="text" id="user_name" name="user_name" th:field="*{userName}">
+        </div>
+        <div>
+            <label for="user_id">利用者ID：</label>
+            <input type="text" id="user_id" name="user_id" th:field="*{userId}">
+        </div>
+        <div>
+            <label for="shelf_id">本棚ID：</label>
+            <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
+        </div>
+        <div>
+            <label for="rental_date">貸出日：</label>
+            <input type="date" id="rental_date" name="rental_date" th:field="*{rentalDate}">
+        </div>
+        <div>
+            <label for="return_date">返却日：</label>
+            <input type="date" id="return_date" name="return_date" th:field="*{returnDate}">
         </div>
         <button type="submit">変更</button>
     </form>

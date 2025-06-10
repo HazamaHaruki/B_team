@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{layout :: head(アルバム一覧)}"></head>
+<head th:replace="~{layout :: head(貸出情報一覧)}"></head>
 
 <body>
     <div th:replace="~{layout :: header}"></div>
-    <h3>アルバム一覧</h3>
+    <h3>貸出情報一覧</h3>
     <table>
         <thead>
             <tr>
-                <th>ID</th>
+                <th>図書番号</th>
                 <th>タイトル</th>
-                <th>アーティスト</th>
-                <th>リリース日</th>
+                <th>利用者名</th>
+                <th>利用者ID</th>
+                <th>本棚ID</th>
+                <th>貸出日</th>
+                <th>返却日</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="album : ${albums}">
-                <td><span th:text="${album.albumId}">album id</span></td>
-                <td><a th:href="@{/albums/{albumId}(albumId=${album.albumId})}"><span th:text="${album.title}">album
-                            title</span></a></td>
-                <td><span th:text="${album.artist}">album artist</span></td>
-                <td><span th:text="${album.releaseDate}">album releaseDate</span></td>
+            <tr th:each="library : ${libraries}">
+                <td><span th:text="${library.bookId}">library id</span></td>
+                <td><span th:text="${library.bookName}">library bookName</span></td>
+                <td><span th:text="${library.userName}">library userName</span></td>
+                <td><span th:text="${library.userId}">library userId</span></td>
+                <td><span th:text="${library.shelfId}">library shelfId</span></td>
+                <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
+                <td><span th:text="${library.returnDate}">library returnDate</span></td>
                 <td>
-                    <form th:action="@{/albums/{albumId}/edit(albumId=${album.albumId})}" method="get">
+                    <form th:action="@{/libraries/{bookId}/edit(bookId=${library.bookId})}" method="get">
                         <button type="submit">編集</button>
                     </form>
-                    <form th:action="@{/albums/{albumId}/delete(albumId=${album.albumId})}" method="post">
+                    <form th:action="@{/libraries/{bookId}/delete(bookId=${library.bookId})}" method="post">
                         <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                     </form>
                 </td>

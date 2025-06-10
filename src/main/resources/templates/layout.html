@@ -9,17 +9,17 @@
 <body>
     <div th:fragment="header">
         <header style="background-color: f8f8f8;">
-            <h4>楽曲管理アプリ</h4>
+            <h4>図書館管理システム</h4>
             <ul>
-                <li><a th:href="@{/albums}">アルバム一覧</a></li>
-                <li><a th:href="@{/albums/new}">アルバム登録</a></li>
+                <li><a th:href="@{/libraries}">貸出情報一覧</a></li>
+                <li><a th:href="@{/libraries/new}">貸出情報予約登録</a></li>
             </ul>
         </header>
     </div>
 
     <div th:fragment="footer">
         <footer style="background-color: f8f8f8; text-align: center;">
-            <p>&copy; 楽曲管理アプリ</p>
+            <p>&copy; 図書館管理システム</p>
         </footer>
     </div>
 </body>
