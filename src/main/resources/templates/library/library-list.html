@@ -21,7 +21,8 @@
         </thead>
         <tbody>
             <tr th:each="library : ${libraries}">
-                <td><span th:text="${library.bookId}">library id</span></td>
+                <td><span th:text="${library.albumId}">library id</span></td>
+                <td><span th:text="${library.bookId}">library bookid</span></td>
                 <td><span th:text="${library.bookName}">library bookName</span></td>
                 <td><span th:text="${library.userName}">library userName</span></td>
                 <td><span th:text="${library.userId}">library userId</span></td>
@@ -29,10 +30,10 @@
                 <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
                 <td><span th:text="${library.returnId}">library returnId</span></td>
                 <td>
-                    <form th:action="@{/libraries/{bookId}/edit(bookId=${library.bookId})}" method="get">
+                    <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" method="get">
                         <button type="submit">編集</button>
                     </form>
-                    <form th:action="@{/libraries/{bookId}/delete(bookId=${library.bookId})}" method="post">
+                    <form th:action="@{/libraries/{albumId}/delete(albumId=${library.albumId})}" method="post">
                         <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                     </form>
                 </td>

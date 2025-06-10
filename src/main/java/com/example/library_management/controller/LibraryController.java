@@ -53,32 +53,32 @@ public class LibraryController {
         return "redirect:/libraries";
     }
 
-    @GetMapping("/{bookId}")
-    public String library(@PathVariable long bookId, Model model) {
-        Library library = libraryService.getAllLibraryById(bookId);
+    @GetMapping("/{albumId}")
+    public String library(@PathVariable long albumId, Model model) {
+        Library library = libraryService.getAllLibraryById(albumId);
         /*List<Music> musics = musicService.getMusicsByAlbumId(albumId);*/
         model.addAttribute("library", library);
         /*model.addAttribute("musics", musics);*/
         return "library/library-detail";
     }
     
-    @PostMapping("/{bookId}/delete")
-    public String deleteLibrary(@PathVariable long bookId) {
-        libraryService.deleteLibrary(bookId);
+    @PostMapping("/{albumId}/delete")
+    public String deleteLibrary(@PathVariable long albumId) {
+        libraryService.deleteLibrary(albumId);
         return "redirect:/libraries";
     }
 
-    @GetMapping("/{bookId}/edit")
-    public String editLibrary(@PathVariable long bookId, Model model) {
-        Library library = libraryService.getAllLibraryById(bookId);
+    @GetMapping("/{albumId}/edit")
+    public String editLibrary(@PathVariable long albumId, Model model) {
+        Library library = libraryService.getAllLibraryById(albumId);
         model.addAttribute("library", library);
 
         return "library/library-edit";
     }
 
-    @PostMapping("/{bookId}/edit")
-    public String updateLibrary(@PathVariable String bookId, Library library) {
-        libraryService.updateLibrary(bookId, library);
+    @PostMapping("/{albumId}/edit")
+    public String updateLibrary(@PathVariable String albumId, Library library) {
+        libraryService.updateLibrary(albumId, library);
         return "redirect:/libraries";
     }
 

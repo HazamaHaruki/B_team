@@ -1,5 +1,6 @@
 CREATE TABLE libraries (
-    book_id VARCHAR(255) PRIMARY KEY,
+    album_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    book_id VARCHAR(255) ,
     book_name VARCHAR(255) NOT NULL,
     user_name VARCHAR(255) NOT NULL,
     user_id VARCHAR(255),

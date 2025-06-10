@@ -34,16 +34,16 @@ public class LibraryService {
         libraryRepository.insertLibrary(library);
     }
 
-    public Library getAllLibraryById(long libraryId) {
-        return libraryRepository.getLibraryById(libraryId);
+    public Library getAllLibraryById(long albumId) {
+        return libraryRepository.getLibraryById(albumId);
     }
 
-    public void deleteLibrary(long bookId) {
-        libraryRepository.deleteLibrary(bookId);
+    public void deleteLibrary(long albumId) {
+        libraryRepository.deleteLibrary(albumId);
     }
 
-    public void updateLibrary(String bookId, Library library) {
-        if (bookId != library.getBookId()) {
+    public void updateLibrary(String albumId, Library library) {
+        if (albumId != library.getBookId()) {
             throw new IllegalArgumentException("Library ID does not match");
         }
         libraryRepository.updateLibrary(library);

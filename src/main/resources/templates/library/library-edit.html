@@ -5,7 +5,7 @@
     <div th:replace="~{layout :: header}"></div>
     <h3>アルバム編集</h3>
     
-     <form th:action="@{/libraies/{bookId}/edit(bookId=${library.bookId})}" th:object="${library}" method="post">
+     <form th:action="@{/libraies/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post">
         <div>
             <label for="book_id">図書番号：</label>
             <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
