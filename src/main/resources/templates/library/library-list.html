@@ -28,7 +28,7 @@
                 <td><span th:text="${library.userId}">library userId</span></td>
                 <td><span th:text="${library.shelfId}">library shelfId</span></td>
                 <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
-                <td><span th:text="${library.returnId}">library returnId</span></td>
+                <td><span th:text="${library.returnDate}">library returnDate</span></td>
                 <td>
                     <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" method="get">
                         <button type="submit">編集</button>

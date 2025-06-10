@@ -16,7 +16,7 @@ public class Library {
     private String userId;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate rentalDate;
-    private LocalDate returnId;
+    private LocalDate returnDate;
     
 
     //private LocalDate releaseDate;

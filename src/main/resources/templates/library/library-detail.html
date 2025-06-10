@@ -31,11 +31,11 @@
             </tr>
             <tr>
                 <th>貸出日</th>
-                <td th:text="${#temporals.format(library.rental_date,'yyyy-MM-dd HH:mm:ss')}"></td>
+                <td th:text="${#temporals.format(library.rental_date,'yyyy-MM-dd')}"></td>
             </tr>
             <tr>
                 <th>返却日</th>
-                <td th:text="${#temporals.format(library.return_date,'yyyy-MM-dd HH:mm:ss')}"></td>
+                <td th:text="${#temporals.format(library.return_date,'yyyy-MM-dd')}"></td>
             </tr>
         </table>
         <a href="/libraries">一覧に戻る</a>

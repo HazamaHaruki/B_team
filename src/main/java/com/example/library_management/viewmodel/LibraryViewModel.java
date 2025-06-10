@@ -9,6 +9,6 @@ public class LibraryViewModel {
     private String userName;
     private String userId;
     private LocalDate rentalDate;
-    private LocalDate returnId;
+    private LocalDate returnDate;
     private String shelfId;
 }
