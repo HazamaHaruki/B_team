@@ -1,4 +1,3 @@
-/*
 package com.example.library_management.controller;
 
 import org.springframework.stereotype.Controller;
@@ -26,4 +25,3 @@ public class RegistrationController {
         return "redirect:/login?register";
     }
 }
-*/

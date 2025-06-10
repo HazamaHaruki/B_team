@@ -35,7 +35,7 @@ public interface LibraryMapper {
             SELECT libraries.libraryId, libraries.title, artist, release_date, count(musics.music_id) AS music_count FROM albums
             LEFT OUTER JOIN musics ON libraries.library_id = musics.library_id
             GROUP BY libraries.library_id, libraries.title, artist, release_date
-            """)*/
+            """)
             
-    public List<LibraryViewModel> selectAllLibrariesWithCount();
+    public List<LibraryViewModel> selectAllLibrariesWithCount();*/
 }

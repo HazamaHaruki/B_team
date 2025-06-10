@@ -49,7 +49,5 @@ public class LibraryService {
         libraryRepository.updateLibrary(library);
     }
 
-    public List<LibraryViewModel> getAllLibrariesWithCount() {
-        return libraryRepository.getAllLibrariesWithCount();
-    }
+    
 }

@@ -9,3 +9,12 @@ CREATE TABLE libraries (
     
 );
 
+
+CREATE TABLE users (
+    user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(60) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+

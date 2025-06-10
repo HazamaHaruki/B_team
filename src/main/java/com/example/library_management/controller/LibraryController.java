@@ -31,8 +31,7 @@ public class LibraryController {
     
     @GetMapping
     public String libraries(Model model) {
-        // List<Album> albums = albumService.getALLAlbums();
-        List<LibraryViewModel> libraries = libraryService.getAllLibrariesWithCount();
+        List<Library> libraries = libraryService.getAllLibraries();
         model.addAttribute("libraries", libraries);
         return "library/library-list";
     }

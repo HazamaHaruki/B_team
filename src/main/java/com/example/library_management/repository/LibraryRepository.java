@@ -36,8 +36,6 @@ public class LibraryRepository {
         libraryMapper.updateLibrary(library);
     }
 
-    public List<LibraryViewModel> getAllLibrariesWithCount() {
-        return libraryMapper.selectAllLibrariesWithCount();
-    }
+    
 
 }
