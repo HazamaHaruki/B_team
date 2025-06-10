@@ -19,7 +19,7 @@ public class SecurityConfig {
             .formLogin(login -> login
                 .loginProcessingUrl("/login")
                 .loginPage("/login")
-                .defaultSuccessUrl("/albums")
+                .defaultSuccessUrl("/libraries/new")
                 .permitAll()
             );
             return http.build();
