@@ -18,7 +18,7 @@ public interface LibraryMapper {
     @Select("SELECT * FROM libraries")
     List<Library> selectAllLibraries();
 
-    @Insert("INSERT INTO libraries (book_id, book_name, user_name,user_id,shelf_id,rental_date,return_date) VALUES (#{bookId}, #{bookName}, #{userName},#{userId},#{shelfId},#{rentalDate},#{returnDate})")
+    @Insert("INSERT INTO libraries (book_id, book_name, user_name,user_id,shelf_id,rental_date,return_date) VALUES (#{bookId}, #{bookName}, #{userName},#{userId},#{shelfId},#{rentalDate},#{returnId})")
     @Options(useGeneratedKeys = true, keyProperty = "libraryId")
     void insertLibrary(Library library);
 
@@ -28,7 +28,7 @@ public interface LibraryMapper {
     @Delete("DELETE FROM libraries WHERE library_id = #{libraryId}")
     void deleteLibraryById(long libraryId);
 
-    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName},user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId}, WHERE library_id = #{libraryId}")
+    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName},user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnId},shelf_id = #{shelfId}, WHERE library_id = #{libraryId}")
     void updateLibrary(Library library);
     
     /*@Select("""

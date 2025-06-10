@@ -14,6 +14,6 @@ public class LibraryForm {
     private String shelfId;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate rentalDate;
-    private LocalDate returnDate;
+    private LocalDate returnId;
     
 }
