@@ -1,9 +1,9 @@
 <!DOCTYPE html>
  <html lang="ja" xmlns:th="http://www.thymeleaf.org">
- <head th:replace="~{layout :: head(アルバム編集)}"></head>
+ <head th:replace="~{layout :: head(貸出情報予約編集)}"></head>
  <body>
     <div th:replace="~{layout :: header}"></div>
-    <h3>アルバム編集</h3>
+    <h3>貸出情報予約編集</h3>
     
      <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post">
         <div>
