@@ -18,6 +18,10 @@
             <input type="text" id="book_name" name="book_name" th:field="*{bookName}">
         </div>
         <div>
+            <label for="shelf_id">本棚：</label>
+            <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
+        </div>
+        <div>
             <label for="user_name">利用者名：</label>
             <input type="text" id="user_name" name="user_name" th:field="*{userName}">
         </div>
@@ -25,10 +29,7 @@
             <label for="user_id">利用者ID：</label>
             <input type="text" id="user_id" name="user_id" th:field="*{userId}">
         </div>
-        <div>
-            <label for="shelf_id">本棚：</label>
-            <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
-        </div>
+        
         <div>
             <label for="rental_date">貸出日：</label>
             <input type="date" id="rental_date" name="rental_date" th:field="*{rentalDate}">
