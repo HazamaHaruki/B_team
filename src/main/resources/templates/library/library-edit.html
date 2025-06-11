@@ -5,7 +5,7 @@
     <div th:replace="~{layout :: header}"></div>
     <h3>アルバム編集</h3>
     
-     <form th:action="@{/libraies/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post">
+     <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post">
         <div>
             <label for="book_id">図書番号：</label>
             <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
@@ -28,11 +28,11 @@
         </div>
         <div>
             <label for="rental_date">貸出日：</label>
-            <input type="text" id="rental_date" name="rental_date" th:field="*{rentalDate}">
+            <input type="date" id="rental_date" name="rental_date" th:field="*{rentalDate}">
         </div>
         <div>
             <label for="return_date">返却日：</label>
-            <input type="text" id="return_date" name="return_date" th:field="*{returnDate}">
+            <input type="date" id="return_date" name="return_date" th:field="*{returnDate}">
         </div>
         <button type="submit">変更</button>
     </form>

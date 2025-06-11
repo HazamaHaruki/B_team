@@ -23,6 +23,7 @@ public class LibraryService {
 
     public void createLibrary(LibraryForm libraryForm) {
         Library library = new Library();
+        library.setAlbumId(libraryForm.getAlbumId());
         library.setBookId(libraryForm.getBookId());
         library.setBookName(libraryForm.getBookName());
         library.setUserId(libraryForm.getUserId());
@@ -44,8 +45,8 @@ public class LibraryService {
         libraryRepository.deleteLibrary(albumId);
     }
 
-    public void updateLibrary(String albumId, Library library) {
-        if (albumId != library.getBookId()) {
+    public void updateLibrary(long albumId, Library library) {
+        if (albumId != library.getAlbumId()) {
             throw new IllegalArgumentException("Library ID does not match");
         }
         libraryRepository.updateLibrary(library);

@@ -28,7 +28,7 @@ public interface LibraryMapper {
     @Delete("DELETE FROM libraries WHERE album_id = #{albumId}")
     void deleteLibraryById(long albumId);
 
-    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName},user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId}, WHERE album_id = #{albumId}")
+    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName},user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE album_id = #{albumId}")
     void updateLibrary(Library library);
     
     /*@Select("""
