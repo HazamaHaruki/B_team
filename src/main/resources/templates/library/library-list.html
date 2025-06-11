@@ -13,9 +13,9 @@
                 <th>　</th>
                 <th>図書番号</th>
                 <th>タイトル</th>
-                <th>利用者名</th>
-                <th>利用者ID</th>
                 <th>本棚ID</th>
+                <th>利用者ID</th>
+                <th>利用者名</th>
                 <th>貸出日</th>
                 <th>返却日</th>
                 <th></th>
@@ -25,16 +25,16 @@
             <tr th:each="library : ${libraries}">
                 <td><span th:text="${library.bookId}">library bookid</span></td>
                 <td><span th:text="${library.bookName}">library bookName</span></td>
+                <td><span th:text="${library.shelfId}">library shelfId</span></td>
                 <td><span th:text="${library.userName}">library userName</span></td>
                 <td><span th:text="${library.userId}">library userId</span></td>
-                <td><span th:text="${library.shelfId}">library shelfId</span></td>
                 <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
                 <td><span th:text="${library.returnDate}">library returnDate</span></td>
                 <td>
-                    <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" method="get">
+                    <form th:action="@{/libraries/{bookId}/edit(bookId=${library.bookId})}" method="get">
                         <button type="submit">編集</button>
                     </form>
-                    <form th:action="@{/libraries/{albumId}/delete(albumId=${library.albumId})}" method="post">
+                    <form th:action="@{/libraries/{bookId}/delete(bookId=${library.bookId})}" method="post">
                         <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                     </form>
                 </td>
