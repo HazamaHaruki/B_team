@@ -1,7 +1,7 @@
-insert into libraries(id,book_name,shelf_id)
+insert into libraries(libraries_id,book_name,shelf_id)
 values(1,'harry up potter','B02');
   
-insert into users(id,user_name)
+insert into users(hito_id,user_name)
 values(2,'Adam trump');
   
 insert into dates(user_id,rental_date,return_date,book_id)

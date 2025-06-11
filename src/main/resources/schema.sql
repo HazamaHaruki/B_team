@@ -1,5 +1,5 @@
 create table libraries(
-  libraries_id Integer PRIMARY KEY,
+  libraries_id Integer AUTO_INCREMENT PRIMARY KEY,
   book_name VARCHAR(255),
   shelf_id VARCHAR(255)
   );

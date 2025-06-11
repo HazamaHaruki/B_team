@@ -18,27 +18,27 @@ public interface LibraryMapper {
     @Select("""
         select * from users
             join dates on users.id = dates.user_id
-            join books on dates.book_id = books.id;
+            join libraries on dates.book_id = libraries.id;
                         """)
     List<Library> selectAllLibraries();
 
-    @Insert("INSERT INTO libraries (book_id, book_name, user_name,user_id,shelf_id,rental_date,return_date) VALUES (#{bookId}, #{bookName}, #{userName},#{userId},#{shelfId},#{rentalDate},#{returnDate})")
+    @Insert("INSERT INTO users (hito_id,libraries_id,book_id, book_name, user_name,user_id,shelf_id,rental_date,return_date) VALUES (#{hitoId},#{librariesId},#{bookId}, #{bookName}, #{userName},#{userId},#{shelfId},#{rentalDate},#{returnDate})")
     @Options(useGeneratedKeys = true, keyProperty = "bookId")
     void insertLibrary(Library library);
 
-    @Select("SELECT * FROM libraries WHERE album_id = #{bookId}")
+    @Select("SELECT * FROM users WHERE book_id = #{bookId}")
     Library selectLibraryById(int bookId);
 
-    @Delete("DELETE FROM libraries WHERE album_id = #{bookId}")
+    @Delete("DELETE FROM users WHERE book_id = #{bookId}")
     void deleteLibraryById(int bookId);
 
-    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE album_id = #{bookId}")
+    @Update("UPDATE users SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE book_id = #{bookId}")
     void updateLibrary(Library library);
     
 @Select("""
             select book_id,book_name,shelf_id,user_id,user_name,rental_date,return_date from users
             join dates on users.id = dates.user_id
-            join books on dates.book_id = books.id;
+            join libraries on dates.book_id = libraries.id;
             """)
             public List<LibraryViewModel> selectAllLibrariesGraph();
 
