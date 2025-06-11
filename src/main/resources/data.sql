@@ -1,5 +1,11 @@
-INSERT INTO libraries (book_id, book_name, user_name, user_id, shelf_id, rental_date, return_date) VALUES
-('A100', 'コバエ大百科', '佐藤太郎','B0102','K200','2021-05-15','2021-05-29');
+insert into libraries(id,book_name,shelf_id)
+values(1,'harry up potter','B02');
+  
+insert into users(id,user_name)
+values(2,'Adam trump');
+  
+insert into dates(user_id,rental_date,return_date,book_id)
+values(2,'2022-02-02','2022-02-22',1);
 
-INSERT INTO users (username, password) VALUES ('sample', '$2a$08$hBocxV325GV9RKzHR.lHreJr8DsMrkg6vg0kRTbNnBvUFknu670GC');
+INSERT INTO LogIn (username, password) VALUES ('sample', '$2a$08$hBocxV325GV9RKzHR.lHreJr8DsMrkg6vg0kRTbNnBvUFknu670GC');
 
