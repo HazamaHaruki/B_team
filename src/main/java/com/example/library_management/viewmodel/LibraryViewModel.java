@@ -4,11 +4,16 @@ import java.time.LocalDate;
 
 @Data
 public class LibraryViewModel {
-    private String bookId;
+
+    private int hitoId;
+    private int librariesId;
+
+    private int bookId;
     private String bookName;
     private String userName;
-    private String userId;
+    private int userId;
+    private String shelfId;
     private LocalDate rentalDate;
     private LocalDate returnDate;
-    private String shelfId;
+    
 }

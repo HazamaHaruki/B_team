@@ -53,66 +53,66 @@ public class LibraryController {
         return "redirect:/libraries";
     }
 
-    @GetMapping("/{albumId}")
-    public String library(@PathVariable long albumId, Model model) {
-        Library library = libraryService.getAllLibraryById(albumId);
-        /*List<Music> musics = musicService.getMusicsByAlbumId(albumId);*/
+    @GetMapping("/{bookId}")
+    public String library(@PathVariable int bookId, Model model) {
+        Library library = libraryService.getAllLibraryById(bookId);
+        /*List<Music> musics = musicService.getMusicsByAlbumId(bookId);*/
         model.addAttribute("library", library);
         /*model.addAttribute("musics", musics);*/
         return "library/library-detail";
     }
     
-    @PostMapping("/{albumId}/delete")
-    public String deleteLibrary(@PathVariable long albumId) {
-        libraryService.deleteLibrary(albumId);
+    @PostMapping("/{bookId}/delete")
+    public String deleteLibrary(@PathVariable int bookId) {
+        libraryService.deleteLibrary(bookId);
         return "redirect:/libraries";
     }
 
-    @GetMapping("/{albumId}/edit")
-    public String editLibrary(@PathVariable long albumId, Model model) {
-        Library library = libraryService.getAllLibraryById(albumId);
+    @GetMapping("/{bookId}/edit")
+    public String editLibrary(@PathVariable int bookId, Model model) {
+        Library library = libraryService.getAllLibraryById(bookId);
         model.addAttribute("library", library);
 
         return "library/library-edit";
     }
 
-    @PostMapping("/{albumId}/edit")
-    public String updateLibrary(@PathVariable long albumId, Library library) {
-        libraryService.updateLibrary(albumId, library);
+    @PostMapping("/{bookId}/edit")
+    public String updateLibrary(@PathVariable int bookId, Library library) {
+        libraryService.updateLibrary(bookId, library);
         return "redirect:/libraries";
     }
 
-    /*@GetMapping("/{albumId}/musics/new")
-    public String createMusicForm(@PathVariable long albumId, Model model) {
+    /*@GetMapping("/{bookId}/musics/new")
+    public String createMusicForm(@PathVariable long bookId, Model model) {
         MusicForm musicForm = new MusicForm();
-        musicForm.setAlbumId(albumId);
+        musicForm.setAlbumId(bookId);
         model.addAttribute("musicForm", musicForm);
         
         return "music/music-form";
     }
 
-    @PostMapping("/{albumId}/musics/new")
-    public String createMusic(@PathVariable long albumId, MusicForm musicForm) {
+    @PostMapping("/{bookId}/musics/new")
+    public String createMusic(@PathVariable long bookId, MusicForm musicForm) {
         musicService.createMusic(musicForm);
-        return "redirect:/albums/" + albumId;
+        return "redirect:/albums/" + bookId;
     }
 
-    @PostMapping("/{albumId}/musics/{musicId}/delete")
-    public String deleteMusic(@PathVariable long albumId, @PathVariable long musicId) {
+    @PostMapping("/{bookId}/musics/{musicId}/delete")
+    public String deleteMusic(@PathVariable long bookId, @PathVariable long musicId) {
         musicService.deleteMusic(musicId);
-        return "redirect:/albums/" + albumId;
+        return "redirect:/albums/" + bookId;
     }
 
-    @GetMapping("/{albumId}/musics/{musicId}/edit")
-    public String editMusic(@PathVariable long albumId, @PathVariable long musicId, Model model) {
+    @GetMapping("/{bookId}/musics/{musicId}/edit")
+    public String editMusic(@PathVariable long bookId, @PathVariable long musicId, Model model) {
         Music music = musicService.getMusicById(musicId);
         model.addAttribute("music", music);
         return "music/music-edit";
     }*/
 
-    /*@PostMapping("/{albumId}/musics/{musicId}/edit")
-    public String postMethodName(@PathVariable long albumId, @PathVariable long musicId, Music music) {
+    /*@PostMapping("/{bookId}/musics/{musicId}/edit")
+    public String postMethodName(@PathVariable long bookId, @PathVariable long musicId, Music music) {
         musicService.updateMusic(musicId, music);
-        return "redirect:/albums/" + albumId;
+        return "redirect:/albums/" + bookId;
     }*/
 }

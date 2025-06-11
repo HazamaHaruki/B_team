@@ -24,12 +24,12 @@ public class LibraryRepository {
         libraryMapper.insertLibrary(library);
     }
 
-    public Library getLibraryById(long albumId) {
-        return libraryMapper.selectLibraryById(albumId);
+    public Library getLibraryById(int bookId) {
+        return libraryMapper.selectLibraryById(bookId);
     }
 
-    public void deleteLibrary(long albumId) {
-        libraryMapper.deleteLibraryById(albumId);
+    public void deleteLibrary(int bookId) {
+        libraryMapper.deleteLibraryById(bookId);
     }
 
     public void updateLibrary(Library library) {

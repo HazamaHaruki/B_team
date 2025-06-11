@@ -8,17 +8,18 @@ import java.time.LocalDate;
 
 @Data
 public class Library {
-    private int albumId;
-    private String shelfId;
-    private String bookId;
+    private int hitoId;
+    private int librariesId;
+
+    private int bookId;
     private String bookName;
     private String userName;
-    private String userId;
+    private int userId;
+    private String shelfId;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate rentalDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate returnDate;
-    
 
     //private LocalDate releaseDate;
     //private LocalDateTime createdAt;

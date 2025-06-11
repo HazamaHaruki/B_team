@@ -23,7 +23,8 @@ public class LibraryService {
 
     public void createLibrary(LibraryForm libraryForm) {
         Library library = new Library();
-        library.setAlbumId(libraryForm.getAlbumId());
+        library.setHitoId(libraryForm.getHitoId());
+        library.setLibrariesId(libraryForm.getLibrariesId());
         library.setBookId(libraryForm.getBookId());
         library.setBookName(libraryForm.getBookName());
         library.setUserId(libraryForm.getUserId());
@@ -37,16 +38,16 @@ public class LibraryService {
         libraryRepository.insertLibrary(library);
     }
 
-    public Library getAllLibraryById(long albumId) {
-        return libraryRepository.getLibraryById(albumId);
+    public Library getAllLibraryById(int bookId) {
+        return libraryRepository.getLibraryById(bookId);
     }
 
-    public void deleteLibrary(long albumId) {
-        libraryRepository.deleteLibrary(albumId);
+    public void deleteLibrary(int bookId) {
+        libraryRepository.deleteLibrary(bookId);
     }
 
-    public void updateLibrary(long albumId, Library library) {
-        if (albumId != library.getAlbumId()) {
+    public void updateLibrary(int bookId, Library library) {
+        if (bookId != library.getBookId()) {
             throw new IllegalArgumentException("Library ID does not match");
         }
         libraryRepository.updateLibrary(library);
