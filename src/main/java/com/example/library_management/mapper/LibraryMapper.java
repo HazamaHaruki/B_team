@@ -15,12 +15,12 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface LibraryMapper {
     
-    @Select("""
-        select * from users
-            join dates on users.id = dates.user_id
-            join libraries on dates.book_id = libraries.id;
-                        """)
-    List<Library> selectAllLibraries();
+@Select("""
+        SELECT * FROM users
+        JOIN dates ON users.hito_id = dates.user_id
+        JOIN libraries ON dates.book_id = libraries.libraries_id;
+        """)
+List<Library> selectAllLibraries();
 
     @Insert("INSERT INTO users (hito_id,libraries_id,book_id, book_name, user_name,user_id,shelf_id,rental_date,return_date) VALUES (#{hitoId},#{librariesId},#{bookId}, #{bookName}, #{userName},#{userId},#{shelfId},#{rentalDate},#{returnDate})")
     @Options(useGeneratedKeys = true, keyProperty = "bookId")
