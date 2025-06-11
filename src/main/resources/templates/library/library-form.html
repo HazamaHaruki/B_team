@@ -4,7 +4,9 @@
 <head th:replace="~{layout :: head(貸出予約情報)}"></head>
 
 <body>
-    <div th:replace="~{layout :: header}"></div>
+    <div th:replace="~{layout :: header1}"></div>
+    <div th:replace="~{layout :: header2}"></div>
+    <h7>こちらをクリック</h7>
     <h3>貸出情報予約登録</h3>
     <form th:action="@{/libraries/new}" th:object="${libraryForm}" method="post">
         <div>

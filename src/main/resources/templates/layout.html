@@ -7,11 +7,21 @@
 </head>
 
 <body>
-    <div th:fragment="header">
+    <div th:fragment="header1">
         <header style="background-color: f8f8f8;">
             <h4>図書館管理システム</h4>
+        </header>
+    </div>
+    <div th:fragment="header2">
+        <header style="background-color: f8f8f8;">
             <ul>
                 <li><a th:href="@{/libraries}">貸出情報一覧</a></li>
+            </ul>
+        </header>
+    </div>
+    <div th:fragment="header3">
+        <header style="background-color: f8f8f8;">
+            <ul>
                 <li><a th:href="@{/libraries/new}">貸出情報予約登録</a></li>
             </ul>
         </header>
