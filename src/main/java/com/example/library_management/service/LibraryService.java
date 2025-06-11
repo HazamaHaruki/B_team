@@ -28,6 +28,8 @@ public class LibraryService {
         library.setUserId(libraryForm.getUserId());
         library.setShelfId(libraryForm.getShelfId());
         library.setUserName(libraryForm.getUserName());
+        library.setRentalDate(libraryForm.getRentalDate());
+        library.setReturnDate(libraryForm.getReturnDate());
 
         // library.setArtist(libraryForm.getArtist());
         // library.setReleaseDate(libraryForm.getReleaseDate());
