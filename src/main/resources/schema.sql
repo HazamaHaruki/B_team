@@ -10,11 +10,13 @@ create table libraries(
   );
   
   create table dates(
-  	user_id Integer PRIMARY KEY,
+  	users_id Integer PRIMARY KEY,
     rental_date DATE,
   	return_date DATE,
   	book_id Integer
   );
+
+  CREATE TABLE ALLdatas();
 
 CREATE TABLE LogIn(
     user_id INTEGER AUTO_INCREMENT PRIMARY KEY,

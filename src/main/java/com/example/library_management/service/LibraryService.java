@@ -2,7 +2,7 @@ package com.example.library_management.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.library_management.entity.Library;
+import com.example.library_management.entity.Libraries;
 import com.example.library_management.form.LibraryForm;
 import com.example.library_management.repository.LibraryRepository;
 import com.example.library_management.viewmodel.LibraryViewModel;
@@ -17,37 +17,31 @@ public class LibraryService {
         this.libraryRepository = libraryRepository;
     }
 
-    public List<Library> getAllLibraries() {
+    public List<Libraries> getAllLibraries() {
         return libraryRepository.getAllLibraries();
     }
 
     public void createLibrary(LibraryForm libraryForm) {
-        Library library = new Library();
-        library.setHitoId(libraryForm.getHitoId());
+        Libraries library = new Libraries();
         library.setLibrariesId(libraryForm.getLibrariesId());
-        library.setBookId(libraryForm.getBookId());
         library.setBookName(libraryForm.getBookName());
-        library.setUserId(libraryForm.getUserId());
         library.setShelfId(libraryForm.getShelfId());
-        library.setUserName(libraryForm.getUserName());
-        library.setRentalDate(libraryForm.getRentalDate());
-        library.setReturnDate(libraryForm.getReturnDate());
 
         // library.setArtist(libraryForm.getArtist());
         // library.setReleaseDate(libraryForm.getReleaseDate());
         libraryRepository.insertLibrary(library);
     }
 
-    public Library getAllLibraryById(int bookId) {
-        return libraryRepository.getLibraryById(bookId);
+    public Libraries getAllLibraryById(int librariesId) {
+        return libraryRepository.getLibraryById(librariesId);
     }
 
-    public void deleteLibrary(int bookId) {
-        libraryRepository.deleteLibrary(bookId);
+    public void deleteLibrary(int librariesId) {
+        libraryRepository.deleteLibrary(librariesId);
     }
 
-    public void updateLibrary(int bookId, Library library) {
-        if (bookId != library.getBookId()) {
+    public void updateLibrary(int librariesId, Libraries library) {
+        if (librariesId != library.getLibrariesId()) {
             throw new IllegalArgumentException("Library ID does not match");
         }
         libraryRepository.updateLibrary(library);

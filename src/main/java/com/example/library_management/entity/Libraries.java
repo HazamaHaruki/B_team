@@ -1,11 +1,10 @@
-package com.example.library_management.form;
+package com.example.library_management.entity;
 
 import lombok.Data;
 
 @Data
-public class LibraryForm {
+public class Libraries {
     private int librariesId;
     private String bookName;
     private String shelfId;
-    
 }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.library_management.entity.Library;
+import com.example.library_management.entity.Libraries;
 // import com.example.library_management.entity.Music;
 import com.example.library_management.form.LibraryForm;
 // import com.example.library_management.form.MusicForm;
@@ -31,7 +31,7 @@ public class LibraryController {
     
     @GetMapping
     public String libraries(Model model) {
-        List<Library> libraries = libraryService.getAllLibraries();
+        List<Libraries> libraries = libraryService.getAllLibraries();
         model.addAttribute("libraries", libraries);
         return "library/library-list";
     }
@@ -55,7 +55,7 @@ public class LibraryController {
 
     @GetMapping("/{bookId}")
     public String library(@PathVariable int bookId, Model model) {
-        Library library = libraryService.getAllLibraryById(bookId);
+        Libraries library = libraryService.getAllLibraryById(bookId);
         /*List<Music> musics = musicService.getMusicsByAlbumId(bookId);*/
         model.addAttribute("library", library);
         /*model.addAttribute("musics", musics);*/
@@ -70,14 +70,14 @@ public class LibraryController {
 
     @GetMapping("/{bookId}/edit")
     public String editLibrary(@PathVariable int bookId, Model model) {
-        Library library = libraryService.getAllLibraryById(bookId);
+        Libraries library = libraryService.getAllLibraryById(bookId);
         model.addAttribute("library", library);
 
         return "library/library-edit";
     }
 
     @PostMapping("/{bookId}/edit")
-    public String updateLibrary(@PathVariable int bookId, Library library) {
+    public String updateLibrary(@PathVariable int bookId, Libraries library) {
         libraryService.updateLibrary(bookId, library);
         return "redirect:/libraries";
     }
