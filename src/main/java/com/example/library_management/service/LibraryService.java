@@ -52,8 +52,8 @@ public class LibraryService {
         libraryRepository.updateLibrary(library);
     }
 
-    public List<Library> getLibraries2ById() {
-        return libraryRepository.getLibraries2ById();
+    public List<Library> getLibraries2ById(String bookId) {
+        return libraryRepository.getLibraries2ById(bookId);
     }
     
 }

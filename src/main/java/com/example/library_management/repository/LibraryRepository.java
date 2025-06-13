@@ -36,8 +36,8 @@ public class LibraryRepository {
         libraryMapper.updateLibrary(library);
     }
 
-    public List<Library> getLibraries2ById(){
-        return libraryMapper. selectLibraries2ById();
+    public List<Library> getLibraries2ById(String bookId){
+        return libraryMapper.selectLibraries2ById(bookId);
     }
     
 
