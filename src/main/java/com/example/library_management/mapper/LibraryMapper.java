@@ -1,7 +1,7 @@
 package com.example.library_management.mapper;
 
 import com.example.library_management.entity.Library;
-import com.example.library_management.viewmodel.LibraryViewModel;
+// import com.example.library_management.viewmodel.LibraryViewModel;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
