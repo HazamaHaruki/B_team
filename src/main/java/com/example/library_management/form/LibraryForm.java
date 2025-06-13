@@ -7,7 +7,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Data
 public class LibraryForm {
-    private int albumId;
     private String bookId;
     private String bookName;
     private String userName;
