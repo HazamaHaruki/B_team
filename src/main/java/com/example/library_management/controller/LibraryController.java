@@ -12,11 +12,12 @@ import com.example.library_management.form.LibraryForm;
 // import com.example.library_management.form.MusicForm;
 import com.example.library_management.service.LibraryService;
 //import com.example.library_management.service.MusicService;
-// import com.example.library_management.viewmodel.LibraryViewModel;
+import com.example.library_management.viewmodel.LibraryViewModel;
 
 import java.util.List;
 
 import org.springframework.web.bind.annotation.PostMapping;
+
 
 
 @Controller
@@ -80,6 +81,15 @@ public class LibraryController {
     public String updateLibrary(@PathVariable long albumId, Library library) {
         libraryService.updateLibrary(albumId, library);
         return "redirect:/libraries";
+    }
+
+    @GetMapping("/{bookId}/search")
+    public String library(@PathVariable String bookId, Model model) {
+        Library library = libraryService.getLibraries2ById(bookId);
+        /*List<Music> musics = musicService.getMusicsByAlbumId(albumId);*/
+        model.addAttribute("library", library);
+        /*model.addAttribute("musics", musics);*/
+        return "library/library-search";
     }
 
     /*@GetMapping("/{albumId}/musics/new")

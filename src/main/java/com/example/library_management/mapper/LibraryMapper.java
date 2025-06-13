@@ -31,6 +31,9 @@ public interface LibraryMapper {
     @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE album_id = #{albumId}")
     void updateLibrary(Library library);
     
+    @Select("SELECT * FROM libraries WHERE book_id = #{bookId}")
+    Library selectLibraries2ById(String bookId);
+    
     /*@Select("""
             SELECT libraries.bookId, libraries.title, artist, release_date, count(musics.music_id) AS music_count FROM albums
             LEFT OUTER JOIN musics ON libraries.library_id = musics.library_id
