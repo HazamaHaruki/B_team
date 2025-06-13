@@ -5,43 +5,49 @@
 
 <body>
     <div th:replace="~{layout :: header1}"></div>
-    <div th:replace="~{layout :: header3}"></div>
-    <h3>貸出情報一覧</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>　</th>
-                <th>図書番号</th>
-                <th>タイトル</th>
-                <th>利用者名</th>
-                <th>利用者ID</th>
-                <th>本棚ID</th>
-                <th>貸出日</th>
-                <th>返却日</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="library : ${libraries}">
-                <td><span th:text="${library.albumId}">library id</span></td>
-                <td><span th:text="${library.bookId}">library bookid</span></td>
-                <td><span th:text="${library.bookName}">library bookName</span></td>
-                <td><span th:text="${library.userName}">library userName</span></td>
-                <td><span th:text="${library.userId}">library userId</span></td>
-                <td><span th:text="${library.shelfId}">library shelfId</span></td>
-                <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
-                <td><span th:text="${library.returnDate}">library returnDate</span></td>
-                <td>
-                    <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" method="get">
-                        <button type="submit">編集</button>
-                    </form>
-                    <form th:action="@{/libraries/{albumId}/delete(albumId=${library.albumId})}" method="post">
-                        <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-2 bg-primary-subtle">
+            <div th:replace="~{layout :: header3}"></div>
+        </div>
+        <div class="col-10">
+            <h3 class="text-center mb-3">貸出情報一覧</h3>
+            <table class="table table-striped-columns">
+                <thead>
+                    <tr>
+                        <!--<th scope="col">　</th>-->
+                        <th scope="col">図書番号</th>
+                        <th scope="col">タイトル</th>
+                        <th scope="col">本棚ID</th>
+                        <th scope="col">利用者ID</th>
+                        <th scope="col">利用者名</th>
+                        <th scope="col">貸出日</th>
+                        <th scope="col">返却日</th>
+                        <th scope="col">備考欄</th>
+                        <th scope="col">返却</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="library : ${libraries}">
+                        <td><span th:text="${library.bookId}">library bookid</span></td>
+                        <td><span th:text="${library.bookName}">library bookName</span></td>
+                        <td><span th:text="${library.shelfId}">library shelfId</span></td>
+                        <td><span th:text="${library.userName}">library userName</span></td>
+                        <td><span th:text="${library.userId}">library userId</span></td>
+                        <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
+                        <td><span th:text="${library.returnDate}">library returnDate</span></td>
+                        <td>
+                            <form th:action="@{/libraries/{bookId}/edit(bookId=${library.bookId})}" method="get">
+                                <button type="submit">編集</button>
+                            </form>
+                            <form th:action="@{/libraries/{bookId}/delete(bookId=${library.bookId})}" method="post">
+                                <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div th:replace="~{layout :: footer}"></div>
 </body>
 

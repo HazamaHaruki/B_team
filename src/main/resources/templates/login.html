@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout :: head(ログイン)}"></head>
-<body>
-    <div th:replace="~{layout :: header1}"></div>
-    <h3>ログイン</h3>
-    <div th:if="${param.error}" style="color:red">
-        ユーザ名、またはパスワードが違います
-    </div>
-    <div th:if="${param.register}" style="color:blue">
-        登録に成功しました
-    </div>
-    <form th:action="@{/login}" method="post">
-        <div>
-            <label for="username">ユーザ名：</label>
-            <input type="text" id="username" name="username">
+ <body class="d-flex justify-content-center align-items-center" style="height: 70vh;">
+    <div class="w-100" style="max-width: 600px;">
+        <div th:replace="~{layout :: header1}" class="text-center"></div>
+        <h3 class="text-center mb-3">ログイン</h3>
+        <div th:if="${param.error}" style="color:red">
+            ユーザ名、またはパスワードが違います
         </div>
-        <div>
-            <label for="password">パスワード：</label>
-            <input type="password" id="password" name="password">
+        <div th:if="${param.register}" style="color:blue">
+            登録に成功しました
         </div>
-        <button type="submit">ログイン</button>
-    </form>
-    <div th:replace="~{layout :: footer}"></div>
+        <form th:action="@{/login}" method="post" class="text-center form-floating">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="username" name="username" placeholder="name">
+                <label for="floatingInput">利用者名</label>
+            </div>
+            <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                <label for="floatingInput">パスワード</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 text-center mb-5">ログイン</button>
+        </form>
+        <div th:replace="~{layout :: footer}"></div>
+    </div>
 </body>
 </html>
