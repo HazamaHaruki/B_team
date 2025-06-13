@@ -24,7 +24,6 @@ public class LibraryService {
     public void createLibrary(LibraryForm libraryForm) {
         Library library = new Library();
         library.setBookId(libraryForm.getBookId());
-        library.setBookId(libraryForm.getBookId());
         library.setBookName(libraryForm.getBookName());
         library.setUserId(libraryForm.getUserId());
         library.setShelfId(libraryForm.getShelfId());
@@ -46,7 +45,7 @@ public class LibraryService {
     }
 
     public void updateLibrary(String bookId, Library library) {
-        if (bookId != library.getBookId()) {
+        if (!bookId.equals(library.getBookId())) {
             throw new IllegalArgumentException("Library ID does not match");
         }
         libraryRepository.updateLibrary(library);
