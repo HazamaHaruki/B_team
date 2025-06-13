@@ -11,8 +11,8 @@
         </div>
         <div class="col-10">
             <h3 class="text-center mb-3">貸出情報一覧</h3>
-            <form th:action="@{/libraries/{bookId}/edit(bookId=${library.bookId})}" method="get">
-                <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
+            <form th:action="@{/libraries/search}" method="get">
+                <input type="text" id="book_id" name="bookId">
                 <button type="submit">検索</button>
             </form>
             <table class="table table-striped-columns">
