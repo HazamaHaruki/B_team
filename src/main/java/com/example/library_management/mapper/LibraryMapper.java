@@ -32,7 +32,7 @@ public interface LibraryMapper {
     void updateLibrary(Library library);
     
     @Select("SELECT * FROM libraries WHERE book_id = #{bookId}")
-    Library selectLibraries2ById(String bookId);
+    List<Library> selectLibraries2ById();
     
     /*@Select("""
             SELECT libraries.bookId, libraries.title, artist, release_date, count(musics.music_id) AS music_count FROM albums

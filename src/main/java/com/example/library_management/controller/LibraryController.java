@@ -83,16 +83,16 @@ public class LibraryController {
 
     @GetMapping("/search")
     public String LibrarySearch(Model model) {
-            LibraryForm library = new LibraryForm();
+        List<Library> libraries = libraryService.getLibraries2ById();
         /*List<Music> musics = musicService.getMusicsBybookId(bookId);*/
-        model.addAttribute("library", library);
+        model.addAttribute("library", libraries);
         /*model.addAttribute("musics", musics);*/
         return "library/library-search";
     }
 
     @PostMapping("/search")
     public String getLibraries2ById(String bookId) { // , Model model) {
-        libraryService.getLibraries2ById(bookId);
+        libraryService.getLibraries2ById();
 
         // List<Album> albums = albumService.getALLAlbums();
         // model.addAttribute("albums", albums);
