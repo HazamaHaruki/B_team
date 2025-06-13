@@ -81,13 +81,23 @@ public class LibraryController {
         return "redirect:/libraries";
     }
 
-    @GetMapping("/{bookId}/search")
-    public String library(@PathVariable String bookId, Model model) {
-        Library library = libraryService.getLibraries2ById(bookId);
+    @GetMapping("/search")
+    public String LibrarySearch(Model model) {
+            LibraryForm library = new LibraryForm();
         /*List<Music> musics = musicService.getMusicsBybookId(bookId);*/
         model.addAttribute("library", library);
         /*model.addAttribute("musics", musics);*/
         return "library/library-search";
+    }
+
+    @PostMapping("/search")
+    public String getLibraries2ById(String bookId) { // , Model model) {
+        libraryService.getLibraries2ById(bookId);
+
+        // List<Album> albums = albumService.getALLAlbums();
+        // model.addAttribute("albums", albums);
+        // return "album/album-list";
+        return "redirect:/libraries";
     }
 
     /*@GetMapping("/{bookId}/musics/new")
