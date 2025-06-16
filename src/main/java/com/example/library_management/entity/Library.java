@@ -8,6 +8,7 @@ import java.time.LocalDate;
 
 @Data
 public class Library {
+    private long albumId;
     private String shelfId;
     private String bookId;
     private String bookName;

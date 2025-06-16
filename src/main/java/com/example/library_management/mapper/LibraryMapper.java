@@ -22,13 +22,13 @@ public interface LibraryMapper {
     @Options(useGeneratedKeys = true, keyProperty = "bookId")
     void insertLibrary(Library library);
 
-    @Select("SELECT * FROM libraries WHERE book_id = #{bookId}")
-    Library selectLibraryById(String bookId);
+    @Select("SELECT * FROM libraries WHERE album_id = #{albumId}")
+    Library selectLibraryById(long albumId);
 
-    @Delete("DELETE FROM libraries WHERE book_id = #{bookId}")
-    void deleteLibraryById(String bookId);
+    @Delete("DELETE FROM libraries WHERE album_id = #{albumId}")
+    void deleteLibraryById(long albumId);
 
-    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE book_id = #{bookId}")
+    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE album_id = #{albumId}")
     void updateLibrary(Library library);
     
     @Select("SELECT * FROM libraries WHERE book_id = #{bookId}")
