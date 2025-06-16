@@ -10,17 +10,37 @@
             <div th:replace="~{layout :: header2}"></div>
         </div>
         <div class="col-10"></div>
-            <h3 class="text-center mb-3">貸出情報予約登録</h3>
+            <h3 class="text-center mb-3">貸出情報登録</h3>
             <form th:action="@{/libraries/new}" th:object="${libraryForm}" method="post" class="text-center mb-3">
                 <div class="mb-3">
                     <label for="book_id">図書番号：</label>
                     <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
                 </div>
                 <div class="mb-3">
+                    <label for="book_name">タイトル：</label>
+                    <input type="text" id="book_name" name="book_name" th:field="*{bookName}">
+                </div>
+                <div class="mb-3">
+                    <label for="shelf_id">本棚ID：</label>
+                    <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
+                </div>
+                <div class="mb-3">
+                    <label for="user_name">利用者名：</label>
+                    <input type="text" id="user_name" name="user_name" th:field="*{userName}">
+                </div>
+                <div class="mb-3">
                     <label for="user_id">利用者ID：</label>
                     <input type="text" id="user_id" name="user_id" th:field="*{userId}">
                 </div>
-                
+                <div class="mb-3">
+                    <label for="rental_date">貸出日：</label>
+                    <input type="text" id="rental_date" name="rental_date" th:field="*{rentalDate}">
+                </div>                
+                <div class="mb-3">
+                    <label for="return_date">返却日：</label>
+                    <input type="text" id="return_date" name="return_date" th:field="*{returnDate}">
+                </div>
+
                 <button type="submit" class="btn btn-primary text-center mb-5">追加</button>
             </form>
             <h6 class="text-center mb-3">*使い方がわからない方は「仕様書」をクリック</h7>
