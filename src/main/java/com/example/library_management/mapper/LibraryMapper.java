@@ -1,11 +1,9 @@
 package com.example.library_management.mapper;
 
 import com.example.library_management.entity.Library;
-// import com.example.library_management.viewmodel.LibraryViewModel;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
@@ -36,11 +34,6 @@ void insertLibrary(Library library);
     @Select("SELECT * FROM libraries WHERE book_id = #{bookId}")
     List<Library> selectLibraries2ById(String bookId);
     
-    /*@Select("""
-            SELECT libraries.bookId, libraries.title, artist, release_date, count(musics.music_id) AS music_count FROM books
-            LEFT OUTER JOIN musics ON libraries.library_id = musics.library_id
-            GROUP BY libraries.library_id, libraries.title, artist, release_date
-            """)
-            
-    public List<LibraryViewModel> selectAllLibrariesWithCount();*/
+    @Update("UPDATE libraries SET return_check = #{returnCheck} WHERE album_id = #{albumId}")
+    void updateReturnCheck(long albumId, boolean returnCheck);
 }

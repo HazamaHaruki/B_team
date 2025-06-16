@@ -4,7 +4,6 @@ import org.springframework.stereotype.Repository;
 
 import com.example.library_management.entity.Library;
 import com.example.library_management.mapper.LibraryMapper;
-// import com.example.library_management.viewmodel.LibraryViewModel;
 
 import java.util.List;
 
@@ -40,5 +39,8 @@ public class LibraryRepository {
         return libraryMapper.selectLibraries2ById(bookId);
     }
     
+    public void updateReturnCheck(long albumId, boolean returnCheck) {
+        libraryMapper.updateReturnCheck(albumId, returnCheck);
+    }
 
 }

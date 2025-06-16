@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.library_management.entity.Library;
 // import com.example.library_management.entity.Music;
@@ -12,7 +13,6 @@ import com.example.library_management.form.LibraryForm;
 // import com.example.library_management.form.MusicForm;
 import com.example.library_management.service.LibraryService;
 //import com.example.library_management.service.MusicService;
-import com.example.library_management.viewmodel.LibraryViewModel;
 
 import java.util.List;
 
@@ -27,7 +27,6 @@ public class LibraryController {
 
     public LibraryController(LibraryService libraryService) {
         this.libraryService = libraryService;
-        /*this.musicService = musicService;*/
     }
     
     @GetMapping
@@ -45,21 +44,11 @@ public class LibraryController {
     }
 
     @PostMapping("/new")
-    public String createLibrary(LibraryForm libraryForm) { // , Model model) {
+    public String createLibrary(LibraryForm libraryForm) {
         libraryService.createLibrary(libraryForm);
-
-        // List<Album> albums = albumService.getALLAlbums();
-        // model.addAttribute("albums", albums);
-        // return "album/album-list";
         return "redirect:/libraries";
     }
 
-    /*@GetMapping("/{bookId}")
-    public String library(@PathVariable String bookId, Model model) {
-        Library library = libraryService.getAllLibraryById(bookId);
-        model.addAttribute("library", library);
-        return "library/library-detail";
-    }*/
     
     @PostMapping("/{albumId}/delete")
     public String deleteLibrary(@PathVariable long albumId) {
@@ -84,53 +73,19 @@ public class LibraryController {
     @GetMapping("/search")
     public String LibrarySearch(String bookId, Model model) {
         List<Library> libraries = libraryService.getLibraries2ById(bookId);
-        /*List<Music> musics = musicService.getMusicsBybookId(bookId);*/
         model.addAttribute("libraries", libraries);
-        /*model.addAttribute("musics", musics);*/
         return "library/library-search";
     }
 
     @PostMapping("/search")
-    public String getLibraries2ById(String bookId) { // , Model model) {
+    public String getLibraries2ById(String bookId) {
         libraryService.getLibraries2ById(bookId);
-
-        // List<Album> albums = albumService.getALLAlbums();
-        // model.addAttribute("albums", albums);
-        // return "album/album-list";
         return "redirect:/libraries";
     }
 
-    /*@GetMapping("/{bookId}/musics/new")
-    public String createMusicForm(@PathVariable String bookId, Model model) {
-        MusicForm musicForm = new MusicForm();
-        musicForm.setbookId(bookId);
-        model.addAttribute("musicForm", musicForm);
-        
-        return "music/music-form";
+    @PostMapping("/{albumId}/return")
+    public String returnCheck(@PathVariable long albumId, boolean returnCheck) {
+        libraryService.updateReturnCheck(albumId, returnCheck);
+        return "redirect:/libraries";
     }
-
-    @PostMapping("/{bookId}/musics/new")
-    public String createMusic(@PathVariable String bookId, MusicForm musicForm) {
-        musicService.createMusic(musicForm);
-        return "redirect:/albums/" + bookId;
-    }
-
-    @PostMapping("/{bookId}/musics/{musicId}/delete")
-    public String deleteMusic(@PathVariable String bookId, @PathVariable String musicId) {
-        musicService.deleteMusic(musicId);
-        return "redirect:/albums/" + bookId;
-    }
-
-    @GetMapping("/{bookId}/musics/{musicId}/edit")
-    public String editMusic(@PathVariable String bookId, @PathVariable String musicId, Model model) {
-        Music music = musicService.getMusicById(musicId);
-        model.addAttribute("music", music);
-        return "music/music-edit";
-    }*/
-
-    /*@PostMapping("/{bookId}/musics/{musicId}/edit")
-    public String postMethodName(@PathVariable String bookId, @PathVariable String musicId, Music music) {
-        musicService.updateMusic(musicId, music);
-        return "redirect:/albums/" + bookId;
-    }*/
 }

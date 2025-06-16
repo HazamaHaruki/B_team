@@ -32,8 +32,6 @@ public class LibraryService {
         library.setRentalDate(libraryForm.getRentalDate());
         library.setReturnDate(libraryForm.getReturnDate());
 
-        // library.setArtist(libraryForm.getArtist());
-        // library.setReleaseDate(libraryForm.getReleaseDate());
         libraryRepository.insertLibrary(library);
     }
 
@@ -56,4 +54,7 @@ public class LibraryService {
         return libraryRepository.getLibraries2ById(bookId);
     }
     
+    public void updateReturnCheck(long albumId, boolean returnCheck) {
+        libraryRepository.updateReturnCheck(albumId, returnCheck);
+    }
 }
