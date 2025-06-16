@@ -36,4 +36,7 @@ void insertLibrary(Library library);
     
     @Update("UPDATE libraries SET return_check = #{returnCheck} WHERE album_id = #{albumId}")
     void updateReturnCheck(long albumId, boolean returnCheck);
+
+    @Select("SELECT * FROM libraries WHERE returnCheck = #{returnCheck}")
+    List<Library> selectByReturned(boolean returnCheck);
 }

@@ -57,4 +57,17 @@ public class LibraryService {
     public void updateReturnCheck(long albumId, boolean returnCheck) {
         libraryRepository.updateReturnCheck(albumId, returnCheck);
     }
+
+    public List<Library> getLibraryReturned(boolean returnCheck) {
+	if (returnCheck == false) {
+		return libraryRepository.getLibraryReturned(returnCheck);
+	} 
+    else if(returnCheck == true){
+		return libraryRepository.getLibraryReturned(returnCheck);
+	}
+    else{
+        return libraryRepository.getAllLibraries();
+    }
+}
+
 }

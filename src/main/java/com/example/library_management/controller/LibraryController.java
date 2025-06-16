@@ -88,4 +88,16 @@ public class LibraryController {
         libraryService.updateReturnCheck(albumId, returnCheck);
         return "redirect:/libraries";
     }
+    @GetMapping("/returnCheck")
+	public String LibraryreturnCheck(boolean returnCheck, Model model) {
+		List<Library> libraries = libraryService.getLibraryReturned(returnCheck);
+		model.addAttribute("libraries", libraries);
+		return "library/library-returnCheck";
+	}
+
+    @PostMapping("/returnCheck")
+    public String getLibraryReturned(boolean returnCheck) {
+        libraryService.getLibraryReturned(returnCheck);
+        return "redirect:/libraries";
+    }
 }
