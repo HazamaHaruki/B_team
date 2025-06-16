@@ -54,20 +54,15 @@ public class LibraryService {
         return libraryRepository.getLibraries2ById(bookId);
     }
     
-    public void updateReturnCheck(long albumId, boolean returnCheck) {
+    public void updateReturnCheck(long albumId, Boolean returnCheck) {
         libraryRepository.updateReturnCheck(albumId, returnCheck);
     }
 
-    public List<Library> getLibraryReturned(boolean returnCheck) {
-	if (returnCheck == false) {
-		return libraryRepository.getLibraryReturned(returnCheck);
-	} 
-    else if(returnCheck == true){
-		return libraryRepository.getLibraryReturned(returnCheck);
+    public List<Library> getLibraryReturned(Boolean returnCheck) {
+	if (returnCheck == null) {
+		return libraryRepository.getAllLibraries();
 	}
-    else{
-        return libraryRepository.getAllLibraries();
-    }
+	return libraryRepository.getLibraryReturned(returnCheck);
 }
 
 }

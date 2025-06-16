@@ -17,6 +17,6 @@ public class Library {
     private LocalDate rentalDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate returnDate;
-    private boolean returnCheck;
+    private Boolean returnCheck;
 
 }

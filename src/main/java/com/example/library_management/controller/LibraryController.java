@@ -89,14 +89,14 @@ public class LibraryController {
         return "redirect:/libraries";
     }
     @GetMapping("/returnCheck")
-	public String LibraryreturnCheck(boolean returnCheck, Model model) {
+	public String LibraryreturnCheck(Boolean returnCheck, Model model) {
 		List<Library> libraries = libraryService.getLibraryReturned(returnCheck);
 		model.addAttribute("libraries", libraries);
 		return "library/library-returnCheck";
 	}
 
     @PostMapping("/returnCheck")
-    public String getLibraryReturned(boolean returnCheck) {
+    public String getLibraryReturned(Boolean returnCheck) {
         libraryService.getLibraryReturned(returnCheck);
         return "redirect:/libraries";
     }

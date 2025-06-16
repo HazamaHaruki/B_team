@@ -35,8 +35,8 @@ void insertLibrary(Library library);
     List<Library> selectLibraries2ById(String bookId);
     
     @Update("UPDATE libraries SET return_check = #{returnCheck} WHERE album_id = #{albumId}")
-    void updateReturnCheck(long albumId, boolean returnCheck);
+    void updateReturnCheck(long albumId, Boolean returnCheck);
 
-    @Select("SELECT * FROM libraries WHERE returnCheck = #{returnCheck}")
-    List<Library> selectByReturned(boolean returnCheck);
+    @Select("SELECT * FROM libraries WHERE return_check = #{returnCheck}")
+    List<Library> selectByReturned(Boolean returnCheck);
 }

@@ -39,10 +39,10 @@ public class LibraryRepository {
         return libraryMapper.selectLibraries2ById(bookId);
     }
     
-    public void updateReturnCheck(long albumId, boolean returnCheck) {
+    public void updateReturnCheck(long albumId, Boolean returnCheck) {
         libraryMapper.updateReturnCheck(albumId, returnCheck);
     }
-public List<Library> getLibraryReturned(boolean returnCheck) {
+public List<Library> getLibraryReturned(Boolean returnCheck) {
 	return libraryMapper.selectByReturned(returnCheck);
 }
 }
