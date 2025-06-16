@@ -9,10 +9,6 @@
     
      <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post">
         <div>
-            <label for="album_id">No.</label>
-            <input type="text" id="album_id" name="album_id" th:field="*{albumId}">
-        </div>
-        <div>
             <label for="book_id">図書番号：</label>
             <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
         </div>

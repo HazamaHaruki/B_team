@@ -61,13 +61,13 @@ public class LibraryController {
         return "library/library-detail";
     }*/
     
-    @PostMapping("/{bookId}/delete")
+    @PostMapping("/{albumId}/delete")
     public String deleteLibrary(@PathVariable long albumId) {
         libraryService.deleteLibrary(albumId);
         return "redirect:/libraries";
     }
 
-    @GetMapping("/{bookId}/edit")
+    @GetMapping("/{albumId}/edit")
     public String editLibrary(@PathVariable long albumId, Model model) {
         Library library = libraryService.getAllLibraryById(albumId);
         model.addAttribute("library", library);
@@ -75,7 +75,7 @@ public class LibraryController {
         return "library/library-edit";
     }
 
-    @PostMapping("/{bookId}/edit")
+    @PostMapping("/{albumId}/edit")
     public String updateLibrary(@PathVariable long albumId, Library library) {
         libraryService.updateLibrary(albumId, library);
         return "redirect:/libraries";
