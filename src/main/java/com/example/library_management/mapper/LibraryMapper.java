@@ -18,9 +18,11 @@ public interface LibraryMapper {
     @Select("SELECT * FROM libraries")
     List<Library> selectAllLibraries();
 
-    @Insert("INSERT INTO libraries (book_id, book_name, user_name,user_id,shelf_id,rental_date,return_date) VALUES (#{bookId}, #{bookName}, #{userName},#{userId},#{shelfId},#{rentalDate},#{returnDate})")
-    @Options(useGeneratedKeys = true, keyProperty = "bookId")
-    void insertLibrary(Library library);
+    @Insert("""
+        INSERT INTO libraries (book_id, book_name, user_name, user_id, shelf_id, rental_date, return_date)
+        VALUES (#{bookId}, #{bookName}, #{userName}, #{userId}, #{shelfId}, CURRENT_TIMESTAMP, DATEADD('DAY', 20, CURRENT_TIMESTAMP))
+        """)
+void insertLibrary(Library library);
 
     @Select("SELECT * FROM libraries WHERE album_id = #{albumId}")
     Library selectLibraryById(long albumId);
