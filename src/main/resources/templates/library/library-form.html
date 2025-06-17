@@ -4,39 +4,50 @@
 <head th:replace="~{layout :: head(貸出予約情報)}"></head>
 
 <body>
-    <div th:replace="~{layout :: header1}"></div>
     <div class="row">
-        <div class="col-2 bg-primary-subtle">
+        <div class="col-2 d-flex flex-column" style="background-color: #FFFDD0;">
             <div th:replace="~{layout :: header2}"></div>
         </div>
-        <div class="col-10"></div>
-            <h3 class="text-center mb-3">貸出情報登録</h3>
+        <div class="col-10" style="background-image: url('https://via.placeholder.com/800x600'); background-color: #93C572;">
+            <div th:replace="~{layout :: header1}"></div>
+            <h3 class="text-center mb-3 fs-3">貸出登録</h3>
             <form th:action="@{/libraries/new}" th:object="${libraryForm}" method="post" class="text-center mb-3">
-                <div class="mb-3">
-                    <label for="book_id">図書番号：</label>
+                <!-- 囲むdiv -->
+            <div class="col-4 mx-auto border p-4 rounded" style="background-color: #faf8e0;">
+                <div class="mb-2 fs-5">
+                    <label for="book_id">書籍番号：</label>
                     <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
                 </div>
-                <div class="mb-3">
-                    <label for="book_name">タイトル：</label>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="book_name">書籍名：</label>
                     <input type="text" id="book_name" name="book_name" th:field="*{bookName}">
                 </div>
-                <div class="mb-3">
-                    <label for="shelf_id">本棚ID：</label>
-                    <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
-                </div>
-                <div class="mb-3">
-                    <label for="user_name">利用者名：</label>
-                    <input type="text" id="user_name" name="user_name" th:field="*{userName}">
-                </div>
-                <div class="mb-3">
+                <div class="mt-2 mb-2 fs-5">
                     <label for="user_id">利用者ID：</label>
                     <input type="text" id="user_id" name="user_id" th:field="*{userId}">
                 </div>
-
-
-                <button type="submit" class="btn btn-primary text-center mb-5">追加</button>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="user_name">利用者名：</label>
+                    <input type="text" id="user_name" name="user_name" th:field="*{userName}">
+                </div>
+                <div class="mt-2 mb-1 fs-5">
+                    <label for="shelf_id">本棚ID：</label>
+                    <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg text-center mt-3 mb-5 fs-1 fw-bold" style="background-color: #fbad88; border-color: #fbad88;">追加</button>
             </form>
-            <h6 class="text-center mb-3">*使い方がわからない方は「仕様書」をクリック</h7>
+            <h6 class="text-center mb-3 fs-4">*使い方がわからない方は「利用ガイド」をクリック</h6>
+            
+            <!-- 画像を表示 -->
+            <!--変更前
+                <div class="position-relative" style="height: 100px;">
+                    <img src="https://i.imgur.com/AVZBuEy.png" alt="Example Image" class="position-absolute top-0 end-0 me-3" style="top: 10px; max-width: 350px;">-->
+            <!--変更後-->
+            <div class="position-relative" style="height: 100px;">
+                <img src="https://i.imgur.com/AVZBuEy.png" alt="Example Image" class="position-absolute" style="top: -280px; right: 0; max-width: 350px;">            
+
+            </div>
         </div>
     </div>
     <div th:replace="~{layout :: footer}"></div>
