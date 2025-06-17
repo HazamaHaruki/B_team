@@ -15,6 +15,15 @@
                 <input type="text" id="book_id" name="bookId">
                 <button type="submit">検索</button>
             </form>
+            <form th:action="@{/libraries/returnCheck}" method="get">
+	            <label for="return_check">返却状態でソート：</label>
+	            <select id="return_check" name="returnCheck">
+		        <option value="">すべて</option>
+		        <option value="true">返却済み</option>
+		        <option value="false">未返却</option>
+	            </select>
+	            <button type="submit">ソート</button>
+            </form>
             <table class="table table-striped-columns">
                 <thead>
                     <tr>
@@ -41,6 +50,12 @@
                         <td><span th:text="${library.userId}">library userId</span></td>
                         <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
                         <td><span th:text="${library.returnDate}">library returnDate</span></td>
+                        <td></td>
+                        <td>
+                            <form th:action="@{/libraries/{albumId}/return(albumId=${library.albumId}, returnCheck=${!library.returnCheck})}" method="post">
+                                <input type="checkbox" th:checked="${library.returnCheck}" name="returnCheck" onchange="this.form.submit()">
+                            </form>
+                        </td>
                         <td>
                             <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" method="get">
                                 <button type="submit">編集</button>
