@@ -36,6 +36,10 @@
             <label for="return_date">返却日：</label>
             <input type="date" id="return_date" name="return_date" th:field="*{returnDate}">
         </div>
+        <div>
+            <label for="memo_space">備考欄：</label>
+            <input type="text" id="memo_space" name="memo_space" th:field="*{memoSpace}">
+        </div>
         <button type="submit">変更</button>
     </form>
     <div th:replace="~{layout :: footer}"></div>

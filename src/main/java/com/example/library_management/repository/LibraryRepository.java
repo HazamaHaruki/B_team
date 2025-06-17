@@ -42,7 +42,8 @@ public class LibraryRepository {
     public void updateReturnCheck(long albumId, Boolean returnCheck) {
         libraryMapper.updateReturnCheck(albumId, returnCheck);
     }
-public List<Library> getLibraryReturned(Boolean returnCheck) {
-	return libraryMapper.selectByReturned(returnCheck);
-}
+    
+    public List<Library> getLibraryReturned(Boolean returnCheck) {
+        return libraryMapper.selectByReturned(returnCheck);
+    }
 }

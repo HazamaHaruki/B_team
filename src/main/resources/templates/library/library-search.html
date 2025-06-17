@@ -50,7 +50,7 @@
                         <td><span th:text="${library.userId}">library userId</span></td>
                         <td><span th:text="${library.rentalDate}">library rentalDate</span></td>
                         <td><span th:text="${library.returnDate}">library returnDate</span></td>
-                        <td></td>
+                        <td><span th:text="${library.memoSpace}">library memoSpace</span></td>
                         <td>
                             <form th:action="@{/libraries/{albumId}/return(albumId=${library.albumId}, returnCheck=${!library.returnCheck})}" method="post">
                                 <input type="checkbox" th:checked="${library.returnCheck}" name="returnCheck" onchange="this.form.submit()">

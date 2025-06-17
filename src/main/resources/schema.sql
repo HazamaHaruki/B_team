@@ -7,7 +7,8 @@ CREATE TABLE libraries (
     shelf_id VARCHAR(255),
     rental_date DATE,
     return_date DATE,
-    return_check BOOLEAN DEFAULT FALSE
+    return_check BOOLEAN DEFAULT FALSE,
+    memo_space VARCHAR(255)
 );
 
 

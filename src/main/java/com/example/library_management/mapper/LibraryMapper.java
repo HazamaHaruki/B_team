@@ -17,8 +17,8 @@ public interface LibraryMapper {
     List<Library> selectAllLibraries();
 
     @Insert("""
-        INSERT INTO libraries (book_id, book_name, user_name, user_id, shelf_id, rental_date, return_date)
-        VALUES (#{bookId}, #{bookName}, #{userName}, #{userId}, #{shelfId}, CURRENT_TIMESTAMP, DATEADD('DAY', 20, CURRENT_TIMESTAMP))
+        INSERT INTO libraries (book_id, book_name, user_name, user_id, shelf_id, rental_date, return_date, memo_space)
+        VALUES (#{bookId}, #{bookName}, #{userName}, #{userId}, #{shelfId}, CURRENT_TIMESTAMP, DATEADD('DAY', 20, CURRENT_TIMESTAMP), #{memoSpace})
         """)
 void insertLibrary(Library library);
 
@@ -28,7 +28,7 @@ void insertLibrary(Library library);
     @Delete("DELETE FROM libraries WHERE album_id = #{albumId}")
     void deleteLibraryById(long albumId);
 
-    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId} WHERE album_id = #{albumId}")
+    @Update("UPDATE libraries SET book_id = #{bookId}, book_name = #{bookName}, user_name = #{userName}, user_id = #{userId},rental_date = #{rentalDate},return_date = #{returnDate},shelf_id = #{shelfId}, memo_space = #{memoSpace} WHERE album_id = #{albumId}")
     void updateLibrary(Library library);
     
     @Select("SELECT * FROM libraries WHERE book_id = #{bookId}")
