@@ -53,9 +53,17 @@ public class LibraryService {
     public List<Library> getLibraries2ById(String bookId) {
         return libraryRepository.getLibraries2ById(bookId);
     }
+
+    public void updateSearchCheck(Boolean searchCheck) {
+        libraryRepository.updateSearchCheck(searchCheck);
+    }
     
     public void updateReturnCheck(long albumId, Boolean returnCheck) {
         libraryRepository.updateReturnCheck(albumId, returnCheck);
+    }
+
+    public List<Library> getSearchCheck(Boolean searchCheck){
+        return libraryRepository.getSearchCheck(searchCheck);
     }
 
     public List<Library> getLibraryReturned(Boolean returnCheck) {

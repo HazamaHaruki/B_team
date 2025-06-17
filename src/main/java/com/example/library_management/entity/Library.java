@@ -18,6 +18,7 @@ public class Library {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate returnDate;
     private Boolean returnCheck;
+    private Boolean searchCheck;
     private String memoSpace;
 
 }

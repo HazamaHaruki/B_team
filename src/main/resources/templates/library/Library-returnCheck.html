@@ -16,18 +16,25 @@
                 <button type="submit">検索</button>
             </form>
 
+            <form
+                th:action="@{/libraries/searchreturn}"
+                method="post">
+                <input type="checkbox" th:checked="${library.searchCheck}" name="searchCheck"
+                    onchange="this.form.submit()">
+            </form>
+
             <form th:action="@{/libraries/returnCheck}" method="get">
-	            <label for="return_check">返却状態でソート：</label>
-	            <select id="return_check" name="returnCheck">
-		        <option value="">すべて</option>
-		        <option value="true">返却済み</option>
-		        <option value="false">未返却</option>
-	            </select>
-	            <button type="submit">ソート</button>
+                <label for="return_check">返却状態でソート：</label>
+                <select id="return_check" name="returnCheck">
+                    <option value="">すべて</option>
+                    <option value="true">返却済み</option>
+                    <option value="false">未返却</option>
+                </select>
+                <button type="submit">ソート</button>
             </form>
 
 
-            
+
             <table class="table table-striped-columns">
                 <thead>
                     <tr>
@@ -56,8 +63,11 @@
                         <td><span th:text="${library.returnDate}">library returnDate</span></td>
                         <td><span th:text="${library.memoSpace}">library memoSpace</span></td>
                         <td>
-                            <form th:action="@{/libraries/{albumId}/return(albumId=${library.albumId}, returnCheck=${!library.returnCheck})}" method="post">
-                                <input type="checkbox" th:checked="${library.returnCheck}" name="returnCheck" onchange="this.form.submit()">
+                            <form
+                                th:action="@{/libraries/{albumId}/return(albumId=${library.albumId}, returnCheck=${!library.returnCheck})}"
+                                method="post">
+                                <input type="checkbox" th:checked="${library.returnCheck}" name="returnCheck"
+                                    onchange="this.form.submit()">
                             </form>
                         </td>
                         <td>
@@ -67,7 +77,7 @@
                             <form th:action="@{/libraries/{albumId}/delete(albumId=${library.albumId})}" method="post">
                                 <button type="submit" onclick="return confirm('本当に削除しますか？');">削除</button>
                             </form>
-                            
+
                         </td>
                     </tr>
                 </tbody>

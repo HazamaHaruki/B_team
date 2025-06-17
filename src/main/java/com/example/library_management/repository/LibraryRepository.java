@@ -35,14 +35,24 @@ public class LibraryRepository {
         libraryMapper.updateLibrary(library);
     }
 
-    public List<Library> getLibraries2ById(String bookId){
+    public List<Library> getLibraries2ById(String bookId) {
         return libraryMapper.selectLibraries2ById(bookId);
     }
+
+    public void updateSearchCheck(Boolean searchCheck) {
+        libraryMapper.updateSearchCheck(searchCheck);
+    }
     
+    public List<Library> getSearchCheck(Boolean searchCheck) {
+        return libraryMapper.selectSearchCheck(searchCheck);
+    }
+
     public void updateReturnCheck(long albumId, Boolean returnCheck) {
         libraryMapper.updateReturnCheck(albumId, returnCheck);
     }
-    
+
+
+
     public List<Library> getLibraryReturned(Boolean returnCheck) {
         return libraryMapper.selectByReturned(returnCheck);
     }

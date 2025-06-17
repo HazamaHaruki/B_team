@@ -70,24 +70,43 @@ public class LibraryController {
         return "redirect:/libraries";
     }
 
+
+    @PostMapping("/searchreturn")
+    public String searchCheck(@PathVariable boolean searchCheck) {
+        libraryService.updateSearchCheck(searchCheck);
+        return "redirect:/libraries";
+    }
+
     @GetMapping("/search")
-    public String LibrarySearch(String bookId, Model model) {
+    public String LibrarySearch(String bookId, Boolean searchCheck, Model model) {
         List<Library> libraries = libraryService.getLibraries2ById(bookId);
-        model.addAttribute("libraries", libraries);
+        List<Library> searchChecks = libraryService.getSearchCheck(searchCheck);
+
+        if (searchCheck == null) {
+            model.addAttribute("libraries", libraries);
+        } else {
+            model.addAttribute("searchChecks", searchChecks);
+        }
         return "library/library-search";
     }
 
     @PostMapping("/search")
-    public String getLibraries2ById(String bookId) {
-        libraryService.getLibraries2ById(bookId);
+    public String getLibraries2ById(String bookId, Boolean searchCheck) {
+        if (searchCheck == null) {
+            libraryService.getLibraries2ById(bookId);
+        } else {
+            libraryService.getSearchCheck(searchCheck);
+        }
         return "redirect:/libraries";
     }
+
 
     @PostMapping("/{albumId}/return")
     public String returnCheck(@PathVariable long albumId, boolean returnCheck) {
         libraryService.updateReturnCheck(albumId, returnCheck);
         return "redirect:/libraries";
     }
+
     @GetMapping("/returnCheck")
 	public String LibraryreturnCheck(Boolean returnCheck, Model model) {
 		List<Library> libraries = libraryService.getLibraryReturned(returnCheck);
