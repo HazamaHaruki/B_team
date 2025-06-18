@@ -16,5 +16,4 @@ public class LibraryForm {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate rentalDate;
     private LocalDate returnDate;
-    
 }

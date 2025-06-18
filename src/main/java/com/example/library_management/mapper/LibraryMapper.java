@@ -20,7 +20,7 @@ public interface LibraryMapper {
         INSERT INTO libraries (book_id, book_name, user_name, user_id, shelf_id, rental_date, return_date, memo_space)
         VALUES (#{bookId}, #{bookName}, #{userName}, #{userId}, #{shelfId}, CURRENT_TIMESTAMP, DATEADD('DAY', 20, CURRENT_TIMESTAMP), #{memoSpace})
         """)
-void insertLibrary(Library library);
+    void insertLibrary(Library library);
 
     @Select("SELECT * FROM libraries WHERE album_id = #{albumId}")
     Library selectLibraryById(long albumId);

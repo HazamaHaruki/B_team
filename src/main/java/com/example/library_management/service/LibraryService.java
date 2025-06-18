@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import com.example.library_management.entity.Library;
 import com.example.library_management.form.LibraryForm;
 import com.example.library_management.repository.LibraryRepository;
-// import com.example.library_management.viewmodel.LibraryViewModel;
 
 import java.util.List;
 
@@ -59,10 +58,9 @@ public class LibraryService {
     }
 
     public List<Library> getLibraryReturned(Boolean returnCheck) {
-	if (returnCheck == null) {
-		return libraryRepository.getAllLibraries();
-	}
-	return libraryRepository.getLibraryReturned(returnCheck);
-}
-
+        if (returnCheck == null) {
+            return libraryRepository.getAllLibraries();
+        }
+        return libraryRepository.getLibraryReturned(returnCheck);
+    }
 }
