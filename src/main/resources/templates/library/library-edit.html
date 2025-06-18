@@ -1,47 +1,63 @@
 <!DOCTYPE html>
- <html lang="ja" xmlns:th="http://www.thymeleaf.org">
- <head th:replace="~{layout :: head(貸出情報予約編集)}"></head>
- <body>
-    <div th:replace="~{layout :: header1}"></div>
-    <div th:replace="~{layout :: header2}"></div>
-    <div th:replace="~{layout :: header3}"></div>
-    <h3>貸出情報予約編集</h3>
-    
-     <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post">
-        <div>
-            <label for="book_id">図書番号：</label>
-            <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head(貸出情報編集)}"></head>
+
+<body>
+    <div class="row">
+        <div class="col-2 d-flex flex-column" style="background-color: #FFFDD0;">
+            <div th:replace="~{layout :: header2}"></div>
         </div>
-        <div>
-            <label for="book_name">タイトル：</label>
-            <input type="text" id="book_name" name="book_name" th:field="*{bookName}">
+        <div class="col-10" style="background-image: url('https://via.placeholder.com/800x600'); background-color: #93C572;">
+            <div th:replace="~{layout :: header1}"></div>
+            <h3 class="text-center mb-3 fs-3">貸出情報編集</h3>
+                <form th:action="@{/libraries/{albumId}/edit(albumId=${library.albumId})}" th:object="${library}" method="post"  class="text-center mb-3">
+
+                <!-- 囲むdiv -->
+            <div class="col-4 mx-auto border p-4 rounded" style="background-color: #faf8e0;">
+                <div class="mb-2 fs-5">
+                    <label for="book_id">書籍番号：</label>
+                    <input type="text" id="book_id" name="book_id" th:field="*{bookId}">
+                </div>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="book_name">書籍名：</label>
+                    <input type="text" id="book_name" name="book_name" th:field="*{bookName}">
+                </div>
+                <div class="mt-2 mb-1 fs-5">
+                    <label for="shelf_id">本棚ID：</label>
+                    <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
+                </div>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="user_name">利用者名：</label>
+                    <input type="text" id="user_name" name="user_name" th:field="*{userName}">
+                </div>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="user_id">利用者ID：</label>
+                    <input type="text" id="user_id" name="user_id" th:field="*{userId}">
+                </div>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="rental_date">貸出日：</label>
+                    <input type="date" id="rental_date" name="rental_date" th:field="*{rentalDate}">
+                </div>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="return_date">返却日：</label>
+                    <input type="date" id="return_date" name="return_date" th:field="*{returnDate}">
+                </div>
+                <div class="mt-2 mb-2 fs-5">
+                    <label for="memo_space">備考欄：</label>
+                    <input type="text" id="memo_space" name="memo_space" th:field="*{memoSpace}">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-lg text-center mt-3 mb-5 fs-1 fw-bold" style="background-color: #fbad88; border-color: #fbad88;">変更</button>
+            </form>
+            
+            <!-- 画像を表示 -->
+            <div class="position-relative" style="height: 100px;">
+                <img src="https://i.imgur.com/AVZBuEy.png" alt="Example Image" class="position-absolute" style="top: -280px; right: 0; max-width: 350px;">            
+
+            </div>
         </div>
-        <div>
-            <label for="user_name">利用者名：</label>
-            <input type="text" id="user_name" name="user_name" th:field="*{userName}">
-        </div>
-        <div>
-            <label for="user_id">利用者ID：</label>
-            <input type="text" id="user_id" name="user_id" th:field="*{userId}">
-        </div>
-        <div>
-            <label for="shelf_id">本棚ID：</label>
-            <input type="text" id="shelf_id" name="shelf_id" th:field="*{shelfId}">
-        </div>
-        <div>
-            <label for="rental_date">貸出日：</label>
-            <input type="date" id="rental_date" name="rental_date" th:field="*{rentalDate}">
-        </div>
-        <div>
-            <label for="return_date">返却日：</label>
-            <input type="date" id="return_date" name="return_date" th:field="*{returnDate}">
-        </div>
-        <div>
-            <label for="memo_space">備考欄：</label>
-            <input type="text" id="memo_space" name="memo_space" th:field="*{memoSpace}">
-        </div>
-        <button type="submit">変更</button>
-    </form>
+    </div>
     <div th:replace="~{layout :: footer}"></div>
- </body>
- </html>
+</body>
+
+</html>
